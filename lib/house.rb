@@ -32,4 +32,11 @@ class House
     house_area
   end
 
+  def details
+    house_details = Hash.new
+    house_details["price"] = @value
+    house_details["address"] = @address
+    house_details 
+  end
+
 end
