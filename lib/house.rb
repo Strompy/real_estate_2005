@@ -48,4 +48,17 @@ class House
     rooms.sort {|a,b| b.area <=> a.area}
   end
 
+  def rooms_by_category
+    cat_sort = Hash.new
+
+    bedrooms = rooms.find_all {|room| room.category == :bedroom}
+    cat_sort[:bedroom] = bedrooms
+    living_rooms = rooms.find_all {|room| room.category == :living_room}
+    cat_sort[:living_room] = living_rooms
+    basements = rooms.find_all {|room| room.category == :basement}
+    cat_sort[:basement] = basements
+    cat_sort
+    # not dynamic yet but works for iteration
+  end
+
 end
