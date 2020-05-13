@@ -4,5 +4,8 @@ require './lib/room'
 require "./lib/house"
 
 class HouseTest < Minitest::Test
-
-end 
+  def test_it_exists
+    house = House.new("$400000", "123 sugar lane")
+    assert_instance_of House, house
+  end
+end
