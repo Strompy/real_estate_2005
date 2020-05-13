@@ -44,4 +44,8 @@ class House
     psf.round(2)
   end
 
+  def rooms_sorted_by_area
+    rooms.sort {|a,b| b.area <=> a.area}
+  end
+
 end
