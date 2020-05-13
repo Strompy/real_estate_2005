@@ -7,7 +7,7 @@ class House
     @price = price
     @address = address
     @rooms = []
-    @value = @price.delete("$").to_i
+    @value = @price.delete("$").to_f
   end
 
   def add_room(room)
@@ -36,7 +36,12 @@ class House
     house_details = Hash.new
     house_details["price"] = @value
     house_details["address"] = @address
-    house_details 
+    house_details
+  end
+
+  def price_per_square_foot
+    psf = @value / area
+    psf.round(2)
   end
 
 end
